@@ -12,3 +12,6 @@ for (let row = 0; row < rows; row++) {
 }
 
 const createPlayer = (integer, score) => ({ integer, score });
+
+const playerOne = createPlayer(1, 0);
+const playerTwo = createPlayer(2, 0);
