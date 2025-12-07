@@ -10,3 +10,5 @@ for (let row = 0; row < rows; row++) {
     board[row].push(0);
   }
 }
+
+const createPlayer = (integer, score) => ({ integer, score });
