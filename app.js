@@ -16,6 +16,17 @@ const playerTwo = createPlayer(2, 0);
 
 let currentPlayer = playerOne.integer;
 
+function changeTurn() {
+  if (currentPlayer === playerOne.integer) {
+    currentPlayer = playerTwo.integer;
+  } else {
+    currentPlayer = playerOne.integer;
+  }
+
+  console.log(`Player ${currentPlayer} turn`);
+  console.table(board);
+}
+
 function mark(row, column) {
   if (row >= board.length || column >= board.length) {
     throw Error("The indicated row/column is bigger than the board");
