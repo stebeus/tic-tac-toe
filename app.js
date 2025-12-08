@@ -77,6 +77,10 @@ function checkWin(integer) {
   return false;
 }
 
+function checkDraw() {
+  return board.every(row => row.every(cell => cell !== 0));
+}
+
 console.log("Use mark(row,column) to select a space in the board");
 console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
 console.table(board);
