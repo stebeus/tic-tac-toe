@@ -41,6 +41,42 @@ function mark(row, column) {
   changeTurn();
 }
 
+function checkWin(integer) {
+  for (const row of board) {
+    if (row.every(cell => cell === integer)) {
+      return true;
+    }
+  }
+
+  for (let column = 0; column < 3; column++) {
+    if (
+      board[0][column] === integer &&
+      board[1][column] === integer &&
+      board[2][column] === integer
+    ) {
+      return true;
+    }
+  }
+
+  if (
+    board[0][0] === integer &&
+    board[1][1] === integer &&
+    board[2][2] === integer
+  ) {
+    return true;
+  }
+
+  if (
+    board[0][2] === integer &&
+    board[1][1] === integer &&
+    board[2][0] === integer
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
 console.log("Use mark(row,column) to select a space in the board");
 console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
 console.table(board);
