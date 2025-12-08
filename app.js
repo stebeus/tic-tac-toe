@@ -1,12 +1,10 @@
 "use strict";
 
-const rows = 3;
-const columns = 3;
 const board = [];
 
-for (let row = 0; row < rows; row++) {
+for (let row = 0; row < 3; row++) {
   board[row] = [];
-  for (let column = 0; column < columns; column++) {
+  for (let column = 0; column < 3; column++) {
     board[row].push(0);
   }
 }
