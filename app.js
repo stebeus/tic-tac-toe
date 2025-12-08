@@ -23,6 +23,7 @@ function changeTurn() {
     currentPlayer = playerOne.integer;
   }
 
+  console.clear();
   console.log(`Player ${currentPlayer} turn`);
   console.table(board);
 }
