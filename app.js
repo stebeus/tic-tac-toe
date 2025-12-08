@@ -16,6 +16,8 @@ const createPlayer = (integer, score) => ({ integer, score });
 const playerOne = createPlayer(1, 0);
 const playerTwo = createPlayer(2, 0);
 
+let currentPlayer = playerOne.integer;
+
 function mark(row, column) {
   if (row >= board.length || column >= board.length) {
     throw Error("The indicated row/column is bigger than the board");
@@ -25,6 +27,6 @@ function mark(row, column) {
     throw Error(`The row ${row} in column ${column} is already marked`);
   }
 
-  board[row][column] = playerOne.integer;
+  board[row][column] = currentPlayer;
   console.table(board);
 }
