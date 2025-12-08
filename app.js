@@ -37,5 +37,5 @@ function mark(row, column) {
   }
 
   board[row][column] = currentPlayer;
-  console.table(board);
+  changeTurn();
 }
