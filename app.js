@@ -40,3 +40,5 @@ function mark(row, column) {
   board[row][column] = currentPlayer;
   changeTurn();
 }
+
+console.log("Use mark(row,column) to select a space in the board");
