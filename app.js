@@ -17,14 +17,21 @@ const playerTwo = createPlayer(2, 0);
 let currentPlayer = playerOne.integer;
 
 function changeTurn() {
-  if (currentPlayer === playerOne.integer) {
-    currentPlayer = playerTwo.integer;
+  console.clear();
+
+  if (checkWin(currentPlayer)) {
+    console.log(`%cPlayer ${currentPlayer} won!`, "color: limeGreen");
+  } else if (checkDraw()) {
+    console.log("Draw!");
   } else {
-    currentPlayer = playerOne.integer;
+    if (currentPlayer === playerOne.integer) {
+      currentPlayer = playerTwo.integer;
+    } else {
+      currentPlayer = playerOne.integer;
+    }
+    console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
   }
 
-  console.clear();
-  console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
   console.table(board);
 }
 
