@@ -24,7 +24,7 @@ function changeTurn() {
   }
 
   console.clear();
-  console.log(`Player ${currentPlayer} turn`);
+  console.log(`%cPlayer ${currentPlayer} turn`, "font-weight: bold;");
   console.table(board);
 }
 
@@ -42,5 +42,5 @@ function mark(row, column) {
 }
 
 console.log("Use mark(row,column) to select a space in the board");
-console.log(`Player ${currentPlayer} turn`);
+console.log(`%cPlayer ${currentPlayer} turn`, "font-weight: bold;");
 console.table(board);
