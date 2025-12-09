@@ -20,8 +20,9 @@ function createPlayer(integer) {
   let score = 0;
 
   const getScore = () => score;
+  const increaseScore = () => score++;
 
-  return { integer, getScore };
+  return { integer, getScore, increaseScore };
 }
 
 const playerOne = createPlayer(1, 0);
