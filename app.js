@@ -48,17 +48,21 @@ function mark(row, column) {
 function changeTurn() {
   console.clear();
 
-  if (checkWin(currentPlayer)) {
-    console.log(`%cPlayer ${currentPlayer} won!`, "color: limeGreen");
-  } else if (checkTie()) {
-    console.log("Tie!");
-  } else {
-    if (currentPlayer === playerOne.integer) {
-      currentPlayer = playerTwo.integer;
-    } else {
-      currentPlayer = playerOne.integer;
-    }
-    console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
+  switch (true) {
+    case checkWin(currentPlayer.integer):
+      console.log(`PLAYER ${currentPlayer.integer} WON!`);
+      break;
+
+    case checkTie():
+      console.log(`TIE!`);
+      break;
+
+    default:
+      if (currentPlayer === playerOne) currentPlayer = playerTwo;
+      else currentPlayer = playerOne;
+
+      console.log(`PLAYER ${currentPlayer.integer} TURN`);
+      break;
   }
 
   GameBoard.print();
