@@ -61,7 +61,7 @@ function changeTurn() {
     console.log(`%cPLAYER ${currentPlayer} TURN`, "font-weight: bold;");
   }
 
-  console.table(board);
+  GameBoard.print();
 }
 
 function checkWin(integer) {
