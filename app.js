@@ -41,7 +41,7 @@ function mark(row, column) {
     throw Error(`The row ${row} in column ${column} is already marked`);
   }
 
-  board[row][column] = currentPlayer;
+  board[row][column] = currentPlayer.integer;
   changeTurn();
 }
 
