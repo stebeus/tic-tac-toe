@@ -98,7 +98,7 @@ const GameController = (function () {
 
   logGame();
 
-  return { mark, restart };
+  return { board, mark, restart };
 })();
 
 const game = GameController;
