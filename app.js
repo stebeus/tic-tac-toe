@@ -43,6 +43,11 @@ function mark(row, column) {
   changeTurn();
 }
 
+function switchPlayerTurn() {
+  currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
+  console.log(`PLAYER ${currentPlayer.integer} TURN`);
+}
+
 function changeTurn() {
   console.clear();
 
@@ -57,8 +62,7 @@ function changeTurn() {
       break;
 
     default:
-      currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
-      console.log(`PLAYER ${currentPlayer.integer} TURN`);
+      switchPlayerTurn();
       break;
   }
 
