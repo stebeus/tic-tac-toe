@@ -6,7 +6,7 @@ const GameBoard = (function () {
   for (let row = 0; row < 3; row++) {
     board[row] = [];
     for (let col = 0; col < 3; col++) {
-      board[row].push(0);
+      board[row].push("");
     }
   }
 
@@ -57,7 +57,7 @@ const GameController = (function () {
       throw Error("The selected row or column does not exist");
     }
 
-    if (board[row][col] !== 0) {
+    if (board[row][col] !== "") {
       throw Error(`The row ${row} in column ${col} is already marked`);
     }
 
@@ -85,7 +85,7 @@ const GameController = (function () {
   }
 
   function checkTie() {
-    return board.every(row => row.every(cell => cell !== 0));
+    return board.every(row => row.every(cell => cell !== ""));
   }
 
   function restart() {
