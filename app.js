@@ -65,34 +65,17 @@ function changeTurn() {
 }
 
 function checkWin(integer) {
-  for (const row of board) {
-    if (row.every(cell => cell === integer)) {
-      return true;
-    }
+  if (board.some(row => row.every(cell => cell === integer))) {
+    return true;
   }
 
-  for (let column = 0; column < 3; column++) {
-    if (
-      board[0][column] === integer &&
-      board[1][column] === integer &&
-      board[2][column] === integer
-    ) {
-      return true;
-    }
-  }
-
-  if (
-    board[0][0] === integer &&
-    board[1][1] === integer &&
-    board[2][2] === integer
-  ) {
+  if (board.some(column => board.every(row => row[column] === integer))) {
     return true;
   }
 
   if (
-    board[0][2] === integer &&
-    board[1][1] === integer &&
-    board[2][0] === integer
+    board.every((row, column) => row[column] === integer) ||
+    board.every((row, column) => row[board.length - 1 - column] === integer)
   ) {
     return true;
   }
