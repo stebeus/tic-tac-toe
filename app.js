@@ -11,8 +11,9 @@ const GameBoard = (function () {
   }
 
   const print = () => console.table(board);
+  const reset = () => board.map(row => row.fill(0));
 
-  return { board, print };
+  return { board, print, reset };
 })();
 
 const createPlayer = (integer, score) => ({ integer, score });
