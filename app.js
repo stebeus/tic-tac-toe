@@ -22,25 +22,34 @@ const GameController = (function () {
 
   let currPlayer = players[0];
 
-  function switchTurn() {
+  function logGame(str = `PLAYER ${currPlayer} TURN`, style = "") {
     console.clear();
+    console.log(
+      "%cType game.mark(row, column) to select a space in the board",
+      "color: gray; font-style: italic;"
+    );
+    console.log(`%c${str}`, `${style} font-weight: bold;`);
+    GameBoard.log();
+  }
 
+  function switchTurn() {
     switch (true) {
-      case checkWin(currPlayer):
-        console.log(`PLAYER ${currPlayer} WON!`);
+      case checkWin():
+        logGame(
+          `PLAYER ${currPlayer} WON! Type game.restart() to play again`,
+          "color: lime;"
+        );
         break;
 
       case checkTie():
-        console.log(`TIE!`);
+        logGame("TIE! Type game.restart() to play again", "color: orange;");
         break;
 
       default:
         currPlayer = currPlayer === players[0] ? players[1] : players[0];
-        console.log(`PLAYER ${currPlayer} TURN`);
+        logGame();
         break;
     }
-
-    GameBoard.print();
   }
 
   function mark(row, col) {
@@ -79,9 +88,7 @@ const GameController = (function () {
     return board.every(row => row.every(cell => cell !== 0));
   }
 
-  console.log("Use mark(row,column) to select a space in the board");
-  console.log(`PLAYER ${currPlayer} TURN`);
-  GameBoard.print();
+  logGame();
 
   return { mark };
 })();
