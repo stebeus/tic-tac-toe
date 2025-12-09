@@ -28,7 +28,7 @@ function createPlayer(integer) {
 const playerOne = createPlayer(1);
 const playerTwo = createPlayer(2);
 
-let currentPlayer = playerOne.integer;
+let currentPlayer = playerOne;
 
 function changeTurn() {
   console.clear();
