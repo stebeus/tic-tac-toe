@@ -10,7 +10,9 @@ const GameBoard = (function () {
     }
   }
 
-  return { board };
+  const print = () => console.table(board);
+
+  return { board, print };
 })();
 
 const createPlayer = (integer, score) => ({ integer, score });
