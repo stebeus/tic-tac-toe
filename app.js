@@ -5,7 +5,7 @@ const GameBoard = (function () {
 
   for (let row = 0; row < 3; row++) {
     board[row] = [];
-    for (let column = 0; column < 3; column++) {
+    for (let col = 0; col < 3; col++) {
       board[row].push(0);
     }
   }
@@ -57,16 +57,16 @@ const GameController = (function () {
     GameBoard.print();
   }
 
-  function mark(row, column) {
-    if (row >= board.length || column >= board.length) {
+  function mark(row, col) {
+    if (row >= board.length || col >= board.length) {
       throw Error("The selected row or column does not exist");
     }
 
-    if (board[row][column] !== 0) {
-      throw Error(`The row ${row} in column ${column} is already marked`);
+    if (board[row][col] !== 0) {
+      throw Error(`The row ${row} in column ${col} is already marked`);
     }
 
-    board[row][column] = currentPlayer.integer;
+    board[row][col] = currentPlayer.integer;
     playRound();
   }
 
@@ -75,13 +75,13 @@ const GameController = (function () {
       return true;
     }
 
-    if (board[0].some(column => board.every(row => row[column] === integer))) {
+    if (board[0].some(col => board.every(row => row[col] === integer))) {
       return true;
     }
 
     if (
-      board.every((row, column) => row[column] === integer) ||
-      board.every((row, column) => row[board.length - 1 - column] === integer)
+      board.every((row, col) => row[col] === integer) ||
+      board.every((row, col) => row[board.length - 1 - col] === integer)
     ) {
       return true;
     }
