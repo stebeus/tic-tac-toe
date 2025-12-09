@@ -16,7 +16,11 @@ const GameBoard = (function () {
   return { board, print, reset };
 })();
 
-const createPlayer = (integer, score) => ({ integer, score });
+function createPlayer(integer) {
+  let score = 0;
+
+  return { integer };
+}
 
 const playerOne = createPlayer(1, 0);
 const playerTwo = createPlayer(2, 0);
