@@ -73,7 +73,7 @@ function checkWin(integer) {
     return true;
   }
 
-  if (board.some(column => board.every(row => row[column] === integer))) {
+  if (board[0].some(column => board.every(row => row[column] === integer))) {
     return true;
   }
 
