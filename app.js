@@ -22,7 +22,7 @@ const GameController = (function () {
 
   let currPlayer = players[0];
 
-  function playRound() {
+  function switchTurn() {
     console.clear();
 
     switch (true) {
@@ -53,7 +53,7 @@ const GameController = (function () {
     }
 
     board[row][col] = currPlayer;
-    playRound();
+    switchTurn();
   }
 
   function checkWin() {
