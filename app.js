@@ -1,13 +1,17 @@
 "use strict";
 
-const board = [];
+const GameBoard = (function () {
+  const board = [];
 
-for (let row = 0; row < 3; row++) {
-  board[row] = [];
-  for (let column = 0; column < 3; column++) {
-    board[row].push(0);
+  for (let row = 0; row < 3; row++) {
+    board[row] = [];
+    for (let column = 0; column < 3; column++) {
+      board[row].push(0);
+    }
   }
-}
+
+  return { board };
+})();
 
 const createPlayer = (integer, score) => ({ integer, score });
 
