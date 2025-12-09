@@ -61,6 +61,8 @@ const GameController = (function () {
       throw Error(`The row ${row} in column ${col} is already marked`);
     }
 
+    if (checkWin()) restart();
+
     board[row][col] = currPlayer;
     switchTurn();
   }
