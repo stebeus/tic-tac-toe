@@ -18,7 +18,7 @@ const GameBoard = (function () {
 
 const GameController = (function () {
   const board = GameBoard.board;
-  const players = [1, 2];
+  const players = ["X", "O"];
 
   let currPlayer = players[0];
 
