@@ -16,33 +16,23 @@ const GameBoard = (function () {
   return { board, log, reset };
 })();
 
-function createPlayer(integer) {
-  let score = 0;
-
-  const getScore = () => score;
-  const increaseScore = () => score++;
-
-  return { integer, getScore, increaseScore };
-}
-
 const GameController = (function () {
   const board = GameBoard.board;
-  const players = [createPlayer(1), createPlayer(2)];
+  const players = [1, 2];
 
   let currentPlayer = players[0];
 
   function switchPlayerTurn() {
     currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
-    console.log(`PLAYER ${currentPlayer.integer} TURN`);
+    console.log(`PLAYER ${currentPlayer} TURN`);
   }
 
   function playRound() {
     console.clear();
 
     switch (true) {
-      case checkWin(currentPlayer.integer):
-        currentPlayer.increaseScore();
-        console.log(`PLAYER ${currentPlayer.integer} WON!`);
+      case checkWin(currentPlayer):
+        console.log(`PLAYER ${currentPlayer} WON!`);
         break;
 
       case checkTie():
@@ -66,7 +56,7 @@ const GameController = (function () {
       throw Error(`The row ${row} in column ${col} is already marked`);
     }
 
-    board[row][col] = currentPlayer.integer;
+    board[row][col] = currentPlayer;
     playRound();
   }
 
@@ -94,7 +84,7 @@ const GameController = (function () {
   }
 
   console.log("Use mark(row,column) to select a space in the board");
-  console.log(`PLAYER ${currentPlayer.integer} TURN`);
+  console.log(`PLAYER ${currentPlayer} TURN`);
   GameBoard.print();
 
   return { mark };
