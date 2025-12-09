@@ -22,11 +22,6 @@ const GameController = (function () {
 
   let currPlayer = players[0];
 
-  function switchPlayerTurn() {
-    currPlayer = currPlayer === players[0] ? players[1] : players[0];
-    console.log(`PLAYER ${currPlayer} TURN`);
-  }
-
   function playRound() {
     console.clear();
 
@@ -40,7 +35,8 @@ const GameController = (function () {
         break;
 
       default:
-        switchPlayerTurn();
+        currPlayer = currPlayer === players[0] ? players[1] : players[0];
+        console.log(`PLAYER ${currPlayer} TURN`);
         break;
     }
 
