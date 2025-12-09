@@ -50,6 +50,7 @@ function changeTurn() {
 
   switch (true) {
     case checkWin(currentPlayer.integer):
+      currentPlayer.increaseScore();
       console.log(`PLAYER ${currentPlayer.integer} WON!`);
       break;
 
