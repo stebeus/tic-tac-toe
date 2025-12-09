@@ -99,3 +99,5 @@ const GameController = (function () {
 
   return { mark };
 })();
+
+const game = GameController;
