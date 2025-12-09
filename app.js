@@ -11,7 +11,7 @@ const GameBoard = (function () {
   }
 
   const log = () => console.table(board);
-  const reset = () => board.map(row => row.fill(0));
+  const reset = () => board.map(row => row.fill(""));
 
   return { board, log, reset };
 })();
