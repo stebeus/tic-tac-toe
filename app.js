@@ -25,8 +25,8 @@ function createPlayer(integer) {
   return { integer, getScore, increaseScore };
 }
 
-const playerOne = createPlayer(1, 0);
-const playerTwo = createPlayer(2, 0);
+const playerOne = createPlayer(1);
+const playerTwo = createPlayer(2);
 
 let currentPlayer = playerOne.integer;
 
