@@ -26,11 +26,9 @@ function createPlayer(integer) {
 }
 
 const board = GameBoard.board;
+const players = [createPlayer(1), createPlayer(2)];
 
-const playerOne = createPlayer(1);
-const playerTwo = createPlayer(2);
-
-let currentPlayer = playerOne;
+let currentPlayer = players[0];
 
 function mark(row, column) {
   if (row >= board.length || column >= board.length) {
@@ -59,9 +57,7 @@ function changeTurn() {
       break;
 
     default:
-      if (currentPlayer === playerOne) currentPlayer = playerTwo;
-      else currentPlayer = playerOne;
-
+      currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
       console.log(`PLAYER ${currentPlayer.integer} TURN`);
       break;
   }
