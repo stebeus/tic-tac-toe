@@ -91,7 +91,7 @@ const GameController = (function () {
   }
 
   function restart() {
-    GameBoard.reset;
+    GameBoard.reset();
     logGame();
   }
 
