@@ -25,6 +25,8 @@ function createPlayer(integer) {
   return { integer, getScore, increaseScore };
 }
 
+const board = GameBoard.board;
+
 const playerOne = createPlayer(1);
 const playerTwo = createPlayer(2);
 
