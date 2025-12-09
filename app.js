@@ -10,10 +10,10 @@ const GameBoard = (function () {
     }
   }
 
-  const print = () => console.table(board);
+  const log = () => console.table(board);
   const reset = () => board.map(row => row.fill(0));
 
-  return { board, print, reset };
+  return { board, log, reset };
 })();
 
 function createPlayer(integer) {
