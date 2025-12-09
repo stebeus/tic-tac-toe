@@ -88,9 +88,14 @@ const GameController = (function () {
     return board.every(row => row.every(cell => cell !== 0));
   }
 
+  function restart() {
+    GameBoard.reset;
+    logGame();
+  }
+
   logGame();
 
-  return { mark };
+  return { mark, restart };
 })();
 
 const game = GameController;
