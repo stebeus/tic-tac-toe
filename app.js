@@ -32,6 +32,19 @@ const playerTwo = createPlayer(2);
 
 let currentPlayer = playerOne;
 
+function mark(row, column) {
+  if (row >= board.length || column >= board.length) {
+    throw Error("The selected row/column is bigger than the board");
+  }
+
+  if (board[row][column] !== 0) {
+    throw Error(`The row ${row} in column ${column} is already marked`);
+  }
+
+  board[row][column] = currentPlayer;
+  changeTurn();
+}
+
 function changeTurn() {
   console.clear();
 
@@ -49,19 +62,6 @@ function changeTurn() {
   }
 
   console.table(board);
-}
-
-function mark(row, column) {
-  if (row >= board.length || column >= board.length) {
-    throw Error("The selected row/column is bigger than the board");
-  }
-
-  if (board[row][column] !== 0) {
-    throw Error(`The row ${row} in column ${column} is already marked`);
-  }
-
-  board[row][column] = currentPlayer;
-  changeTurn();
 }
 
 function checkWin(integer) {
