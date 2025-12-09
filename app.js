@@ -40,7 +40,7 @@ function mark(row, column) {
   }
 
   board[row][column] = currentPlayer.integer;
-  changeTurn();
+  playRound();
 }
 
 function switchPlayerTurn() {
@@ -48,7 +48,7 @@ function switchPlayerTurn() {
   console.log(`PLAYER ${currentPlayer.integer} TURN`);
 }
 
-function changeTurn() {
+function playRound() {
   console.clear();
 
   switch (true) {
