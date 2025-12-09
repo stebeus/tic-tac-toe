@@ -92,6 +92,7 @@ const GameController = (function () {
 
   function restart() {
     GameBoard.reset();
+    currPlayer = players[0];
     logGame();
   }
 
