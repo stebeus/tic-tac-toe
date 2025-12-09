@@ -30,19 +30,6 @@ const players = [createPlayer(1), createPlayer(2)];
 
 let currentPlayer = players[0];
 
-function mark(row, column) {
-  if (row >= board.length || column >= board.length) {
-    throw Error("The selected row or column does not exist");
-  }
-
-  if (board[row][column] !== 0) {
-    throw Error(`The row ${row} in column ${column} is already marked`);
-  }
-
-  board[row][column] = currentPlayer.integer;
-  playRound();
-}
-
 function switchPlayerTurn() {
   currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
   console.log(`PLAYER ${currentPlayer.integer} TURN`);
@@ -67,6 +54,19 @@ function playRound() {
   }
 
   GameBoard.print();
+}
+
+function mark(row, column) {
+  if (row >= board.length || column >= board.length) {
+    throw Error("The selected row or column does not exist");
+  }
+
+  if (board[row][column] !== 0) {
+    throw Error(`The row ${row} in column ${column} is already marked`);
+  }
+
+  board[row][column] = currentPlayer.integer;
+  playRound();
 }
 
 function checkWin(integer) {
