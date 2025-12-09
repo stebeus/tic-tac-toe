@@ -50,8 +50,8 @@ function changeTurn() {
 
   if (checkWin(currentPlayer)) {
     console.log(`%cPlayer ${currentPlayer} won!`, "color: limeGreen");
-  } else if (checkDraw()) {
-    console.log("Draw!");
+  } else if (checkTie()) {
+    console.log("Tie!");
   } else {
     if (currentPlayer === playerOne.integer) {
       currentPlayer = playerTwo.integer;
@@ -83,7 +83,7 @@ function checkWin(integer) {
   return false;
 }
 
-function checkDraw() {
+function checkTie() {
   return board.every(row => row.every(cell => cell !== 0));
 }
 
