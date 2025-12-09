@@ -92,5 +92,5 @@ function checkTie() {
 }
 
 console.log("Use mark(row,column) to select a space in the board");
-console.log(`%cPLAYER ${currentPlayer.integer} TURN`, "font-weight: bold;");
+console.log(`PLAYER ${currentPlayer.integer} TURN`);
 GameBoard.print();
