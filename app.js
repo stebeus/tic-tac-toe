@@ -34,7 +34,7 @@ let currentPlayer = playerOne;
 
 function mark(row, column) {
   if (row >= board.length || column >= board.length) {
-    throw Error("The selected row/column is bigger than the board");
+    throw Error("The selected row or column does not exist");
   }
 
   if (board[row][column] !== 0) {
