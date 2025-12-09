@@ -19,7 +19,9 @@ const GameBoard = (function () {
 function createPlayer(integer) {
   let score = 0;
 
-  return { integer };
+  const getScore = () => score;
+
+  return { integer, getScore };
 }
 
 const playerOne = createPlayer(1, 0);
