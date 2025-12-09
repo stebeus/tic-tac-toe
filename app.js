@@ -60,18 +60,18 @@ const GameController = (function () {
     playRound();
   }
 
-  function checkWin(integer) {
-    if (board.some(row => row.every(cell => cell === integer))) {
+  function checkWin() {
+    if (board.some(row => row.every(cell => cell === currPlayer))) {
       return true;
     }
 
-    if (board[0].some(col => board.every(row => row[col] === integer))) {
+    if (board[0].some(col => board.every(row => row[col] === currPlayer))) {
       return true;
     }
 
     if (
-      board.every((row, col) => row[col] === integer) ||
-      board.every((row, col) => row[board.length - 1 - col] === integer)
+      board.every((row, col) => row[col] === currPlayer) ||
+      board.every((row, col) => row[board.length - 1 - col] === currPlayer)
     ) {
       return true;
     }
