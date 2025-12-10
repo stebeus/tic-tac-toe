@@ -100,5 +100,3 @@ const GameController = (function () {
 
   return { board, mark, restart };
 })();
-
-const game = GameController;
