@@ -44,6 +44,8 @@ const GameController = (function () {
 
   function mark(row, col) {
     if (board[row][col] !== "") return;
+    if (checkWin() || checkTie()) return;
+
     board[row][col] = currPlayer;
     switchTurn();
   }
@@ -116,8 +118,6 @@ const GameRender = (function () {
   function handleMark(e) {
     const cell = e.target;
     const [row, col] = cell.getAttribute("data-index").split("-");
-
-    if (game.checkWin() || game.checkTie()) return;
 
     game.mark(row, col);
     cell.textContent = board[row][col];
