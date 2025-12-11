@@ -136,13 +136,13 @@ const GameRender = (function () {
     const [row, col] = cell.getAttribute("data-index").split("-");
 
     game.mark(row, col);
-    cell.textContent = board[row][col];
+    cell.innerHTML = `<p class="cell--marker">${board[row][col]}</p>`;
     announce();
   }
 
   function handleRestart() {
     game.restart();
-    boardDiv.childNodes.forEach((cell) => (cell.textContent = ""));
+    boardDiv.childNodes.forEach((cell) => (cell.innerHTML = ""));
     announce();
   }
 
