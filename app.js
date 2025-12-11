@@ -55,7 +55,7 @@ const GameController = (function () {
       return true;
     }
 
-    if (board[0].some(col => board.every(row => row[col] === currPlayer))) {
+    if (board.some((_, col) => board.every(row => row[col] === currPlayer))) {
       return true;
     }
 
