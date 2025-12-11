@@ -75,3 +75,5 @@ const GameController = (function () {
 
   return { mark, restart };
 })();
+
+const GameRender = (function () {})();
