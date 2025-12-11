@@ -20,3 +20,7 @@
   grid-template: repeat(3, 6em) / repeat(3, 6em);
   gap: 0.5rem;
 }
+
+.cell {
+  background-color: gray;
+}
