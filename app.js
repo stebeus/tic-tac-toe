@@ -89,4 +89,12 @@ const GameRender = (function () {
     template.innerHTML = html.trim();
     return template.content.firstElementChild;
   }
+
+  function delegateEvent(type, selector, callback, parent = document) {
+    parent.addEventListener(type, e => {
+      if (e.target.closest(selector)) {
+        callback(e);
+      }
+    });
+  }
 })();
