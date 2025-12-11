@@ -20,20 +20,23 @@ const GameController = (function () {
   const players = ["X", "O"];
 
   let currPlayer = players[0];
+  let announcement = `Player ${currPlayer} turn`;
 
   const getCurrPlayer = () => currPlayer;
 
   function switchTurn() {
     switch (true) {
       case checkWin():
+        announcement = `Player ${currPlayer} won!`;
         break;
 
       case checkTie():
+        announcement = "Tie!";
         break;
 
       default:
         currPlayer = currPlayer === players[0] ? players[1] : players[0];
-
+        announcement = `Player ${currPlayer} turn`;
         break;
     }
   }
@@ -70,6 +73,7 @@ const GameController = (function () {
   function restart() {
     GameBoard.reset();
     currPlayer = players[0];
+    announcement = `Player ${currPlayer} turn`;
   }
 
   return { getCurrPlayer, mark, restart };
