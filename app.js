@@ -51,14 +51,17 @@ const GameController = (function () {
   }
 
   function checkWin() {
+    // Horizontal
     if (board.some((row) => row.every((cell) => cell === currPlayer))) {
       return true;
     }
 
+    // Vertical
     if (board.some((_, col) => board.every((row) => row[col] === currPlayer))) {
       return true;
     }
 
+    // Diagonal
     if (
       board.every((row, col) => row[col] === currPlayer) ||
       board.every((row, col) => row[board.length - 1 - col] === currPlayer)
