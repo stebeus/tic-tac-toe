@@ -90,6 +90,7 @@ const GameRender = (function () {
   const board = GameBoard.board;
   const game = GameController;
 
+  // Utilities
   function elementFromHTML(html) {
     const template = document.createElement("template");
     template.innerHTML = html.trim();
@@ -114,6 +115,7 @@ const GameRender = (function () {
     });
   }
 
+  // DOM
   for (let row = 0; row < board.length; row++) {
     for (let col = 0; col < board.length; col++) {
       const cell = elementFromHTML(
