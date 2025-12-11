@@ -21,6 +21,8 @@ const GameController = (function () {
 
   let currPlayer = players[0];
 
+  const getCurrPlayer = () => currPlayer;
+
   function switchTurn() {
     switch (true) {
       case checkWin():
@@ -70,7 +72,7 @@ const GameController = (function () {
     currPlayer = players[0];
   }
 
-  return { mark, restart };
+  return { getCurrPlayer, mark, restart };
 })();
 
 const GameRender = (function () {
