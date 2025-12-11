@@ -37,10 +37,7 @@ const GameController = (function () {
   }
 
   function mark(row, col) {
-    if (board[row][col] !== "") {
-      throw Error(`The row ${row} in column ${col} is already marked`);
-    }
-
+    if (board[row][col] !== "") return;
     board[row][col] = currPlayer;
     switchTurn();
   }
