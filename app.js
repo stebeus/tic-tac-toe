@@ -105,4 +105,14 @@ const GameRender = (function () {
       boardDiv.appendChild(cell);
     }
   }
+
+  function handleMark(e) {
+    const cell = e.target;
+    const [row, col] = cell.getAttribute("data-index").split("-");
+
+    cell.textContent = game.getCurrPlayer();
+    game.mark(row, col);
+  }
+
+  delegateEvent("click", ".board", handleMark);
 })();
