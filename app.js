@@ -117,6 +117,8 @@ const GameRender = (function () {
     const cell = e.target;
     const [row, col] = cell.getAttribute("data-index").split("-");
 
+    if (game.checkWin() || game.checkTie()) return;
+
     cell.textContent = game.getCurrPlayer();
     game.mark(row, col);
     announce();
