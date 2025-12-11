@@ -76,4 +76,8 @@ const GameController = (function () {
   return { mark, restart };
 })();
 
-const GameRender = (function () {})();
+const GameRender = (function () {
+  const announcement = document.querySelector(".announcement");
+  const boardDiv = document.querySelector(".board");
+  const btnRestart = document.querySelector("#restart");
+})();
