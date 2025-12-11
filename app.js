@@ -83,4 +83,10 @@ const GameRender = (function () {
 
   const board = GameBoard.board;
   const game = GameController;
+
+  function elementFromHTML(html) {
+    const template = document.createElement("template");
+    template.innerHTML = html.trim();
+    return template.content.firstElementChild;
+  }
 })();
