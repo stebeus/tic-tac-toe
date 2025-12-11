@@ -97,4 +97,13 @@ const GameRender = (function () {
       }
     });
   }
+
+  for (let row = 0; row < board.length; row++) {
+    for (let col = 0; col < board.length; col++) {
+      const cell = elementFromHTML(
+        `<div class="cell" data-index="${row}-${col}"></div>`
+      );
+      boardDiv.appendChild(cell);
+    }
+  }
 })();
