@@ -142,6 +142,6 @@ const GameRender = (function () {
 
   announce();
 
-  delegateEvent("click", ".board", handleMark);
-  delegateEvent("click", "#restart", handleRestart);
+  delegateEvent("click", boardDiv, handleMark);
+  delegateEvent("click", btnRestart, handleRestart);
 })();
