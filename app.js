@@ -80,4 +80,7 @@ const GameRender = (function () {
   const announcement = document.querySelector(".announcement");
   const boardDiv = document.querySelector(".board");
   const btnRestart = document.querySelector("#restart");
+
+  const board = GameBoard.board;
+  const game = GameController;
 })();
