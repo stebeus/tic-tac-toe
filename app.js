@@ -119,8 +119,8 @@ const GameRender = (function () {
 
     if (game.checkWin() || game.checkTie()) return;
 
-    cell.textContent = game.getCurrPlayer();
     game.mark(row, col);
+    cell.textContent = board[row][col];
     announce();
   }
 
