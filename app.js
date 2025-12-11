@@ -111,18 +111,24 @@ const GameRender = (function () {
     }
   }
 
+  const announce = () => (announcement.textContent = game.getAnnouncement());
+
   function handleMark(e) {
     const cell = e.target;
     const [row, col] = cell.getAttribute("data-index").split("-");
 
     cell.textContent = game.getCurrPlayer();
     game.mark(row, col);
+    announce();
   }
 
   function handleRestart() {
     game.restart();
     boardDiv.childNodes.forEach(cell => (cell.textContent = ""));
+    announce();
   }
+
+  announce();
 
   delegateEvent("click", ".board", handleMark);
   delegateEvent("click", "#restart", handleRestart);
