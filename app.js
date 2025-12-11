@@ -10,7 +10,7 @@ const GameBoard = (function () {
     }
   }
 
-  const reset = () => board.map(row => row.fill(""));
+  const reset = () => board.map((row) => row.fill(""));
 
   return { board, reset };
 })();
@@ -51,11 +51,11 @@ const GameController = (function () {
   }
 
   function checkWin() {
-    if (board.some(row => row.every(cell => cell === currPlayer))) {
+    if (board.some((row) => row.every((cell) => cell === currPlayer))) {
       return true;
     }
 
-    if (board.some((_, col) => board.every(row => row[col] === currPlayer))) {
+    if (board.some((_, col) => board.every((row) => row[col] === currPlayer))) {
       return true;
     }
 
@@ -70,7 +70,7 @@ const GameController = (function () {
   }
 
   function checkTie() {
-    return board.every(row => row.every(cell => cell !== ""));
+    return board.every((row) => row.every((cell) => cell !== ""));
   }
 
   function restart() {
@@ -97,7 +97,7 @@ const GameRender = (function () {
   }
 
   function delegateEvent(type, selector, callback, parent = document) {
-    parent.addEventListener(type, e => {
+    parent.addEventListener(type, (e) => {
       if (e.target.closest(selector)) {
         callback(e);
       }
@@ -126,7 +126,7 @@ const GameRender = (function () {
 
   function handleRestart() {
     game.restart();
-    boardDiv.childNodes.forEach(cell => (cell.textContent = ""));
+    boardDiv.childNodes.forEach((cell) => (cell.textContent = ""));
     announce();
   }
 
