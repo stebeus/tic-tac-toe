@@ -10,10 +10,9 @@ const GameBoard = (function () {
     }
   }
 
-  const log = () => console.table(board);
   const reset = () => board.map(row => row.fill(""));
 
-  return { board, log, reset };
+  return { board, reset };
 })();
 
 const GameController = (function () {
@@ -22,32 +21,17 @@ const GameController = (function () {
 
   let currPlayer = players[0];
 
-  function logGame(str = `PLAYER ${currPlayer} TURN`, style = "") {
-    console.clear();
-    console.log(
-      "%cType game.mark(row, column) to select a space in the board",
-      "color: gray; font-style: italic;"
-    );
-    console.log(`%c${str}`, `${style} font-weight: bold;`);
-    GameBoard.log();
-  }
-
   function switchTurn() {
     switch (true) {
       case checkWin():
-        logGame(
-          `PLAYER ${currPlayer} WON! Type game.restart() to play again`,
-          "color: lime;"
-        );
         break;
 
       case checkTie():
-        logGame("TIE! Type game.restart() to play again", "color: orange;");
         break;
 
       default:
         currPlayer = currPlayer === players[0] ? players[1] : players[0];
-        logGame();
+
         break;
     }
   }
@@ -93,10 +77,7 @@ const GameController = (function () {
   function restart() {
     GameBoard.reset();
     currPlayer = players[0];
-    logGame();
   }
-
-  logGame();
 
   return { board, mark, restart };
 })();
