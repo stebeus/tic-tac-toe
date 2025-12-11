@@ -73,5 +73,5 @@ const GameController = (function () {
     currPlayer = players[0];
   }
 
-  return { board, mark, restart };
+  return { mark, restart };
 })();
