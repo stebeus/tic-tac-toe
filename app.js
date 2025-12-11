@@ -77,7 +77,7 @@ const GameController = (function () {
     announcement = `Player ${currPlayer} turn`;
   }
 
-  return { getCurrPlayer, getAnnouncement, mark, restart };
+  return { getCurrPlayer, getAnnouncement, mark, checkWin, checkTie, restart };
 })();
 
 const GameRender = (function () {
