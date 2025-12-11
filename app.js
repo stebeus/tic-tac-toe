@@ -97,10 +97,20 @@ const GameRender = (function () {
   }
 
   function delegateEvent(type, selector, callback, parent = document) {
-    parent.addEventListener(type, (e) => {
-      if (e.target.closest(selector)) {
-        callback(e);
+    function match(target) {
+      if (typeof selector === "string") {
+        return target.closest(selector);
       }
+
+      if (selector instanceof Element) {
+        return selector === target || selector.contains(target);
+      }
+
+      return false;
+    }
+
+    parent.addEventListener(type, (e) => {
+      if (match(e.target)) callback(e);
     });
   }
 
