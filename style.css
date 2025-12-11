@@ -14,3 +14,9 @@
   min-height: 100dvh;
   font-family: system-ui, sans-serif;
 }
+
+.board {
+  display: grid;
+  grid-template: repeat(3, 6em) / repeat(3, 6em);
+  gap: 0.5rem;
+}
