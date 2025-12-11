@@ -119,5 +119,11 @@ const GameRender = (function () {
     game.mark(row, col);
   }
 
+  function handleRestart() {
+    game.restart();
+    boardDiv.childNodes.forEach(cell => (cell.textContent = ""));
+  }
+
   delegateEvent("click", ".board", handleMark);
+  delegateEvent("click", "#restart", handleRestart);
 })();
