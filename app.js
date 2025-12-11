@@ -23,6 +23,7 @@ const GameController = (function () {
   let announcement = `Player ${currPlayer} turn`;
 
   const getCurrPlayer = () => currPlayer;
+  const getAnnouncement = () => announcement;
 
   function switchTurn() {
     switch (true) {
@@ -76,7 +77,7 @@ const GameController = (function () {
     announcement = `Player ${currPlayer} turn`;
   }
 
-  return { getCurrPlayer, mark, restart };
+  return { getCurrPlayer, getAnnouncement, mark, restart };
 })();
 
 const GameRender = (function () {
