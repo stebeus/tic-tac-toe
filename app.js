@@ -3,6 +3,7 @@
 const GameBoard = (function () {
   const board = [];
 
+  // Two-dimensional array
   for (let row = 0; row < 3; row++) {
     board[row] = [];
     for (let col = 0; col < 3; col++) {
