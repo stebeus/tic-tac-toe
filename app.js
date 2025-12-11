@@ -37,10 +37,6 @@ const GameController = (function () {
   }
 
   function mark(row, col) {
-    if (row >= board.length || col >= board.length) {
-      throw Error("The selected row or column does not exist");
-    }
-
     if (board[row][col] !== "") {
       throw Error(`The row ${row} in column ${col} is already marked`);
     }
