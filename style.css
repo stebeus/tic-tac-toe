@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   --tint-h: 220;
   --tint-s: 45%;
   --color-bg: hsl(from var(--color-fg) h s calc(l - 5));
