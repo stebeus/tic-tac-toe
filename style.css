@@ -1,3 +1,13 @@
+:root {
+  --tint-h: 220;
+  --tint-s: 45%;
+  --color-bg: hsl(from var(--color-fg) h s calc(l - 5));
+  --color-fg: hsl(var(--tint-h), var(--tint-s), 100%);
+  --color-txt: hsl(var(--tint-h), var(--tint-s), 10%);
+  --color-txt-muted: hsl(from var(--color-txt) h s calc(l + 30));
+  --color-border: hsl(from var(--color-txt) h s calc(l + 25) / 25%);
+}
+
 *,
 *::before,
 *::after {
@@ -16,15 +26,15 @@
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
-  background-color: ghostwhite;
-  color: dimgray;
+  background-color: var(--color-bg);
+  color: var(--color-txt-muted);
   font-family: system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
 }
 
 h1 {
-  color: black;
+  color: var(--color-txt);
   font-size: 4.5rem;
 }
 
@@ -43,24 +53,24 @@ h1 {
   overflow: hidden;
   display: flex;
   align-items: center;
-  border: 3px solid silver;
+  border: 3px solid var(--color-border);
   border-radius: 0.5rem;
-  background-color: white;
-  color: black;
+  background-color: var(--color-fg);
+  color: var(--color-txt);
 }
 
 .cell--marker {
   width: 100%;
   height: 100%;
-  background-color: silver;
+  background-color: var(--color-border);
   font-size: 4.5rem;
   text-align: center;
 }
 
 button {
-  border: 3px solid dimgray;
+  border: 3px solid var(--color-border);
   border-radius: 999em;
   padding: 0.25em 2em;
-  background-color: gray;
-  color: white;
+  background-color: var(--color-txt-muted);
+  color: var(--color-fg);
 }
