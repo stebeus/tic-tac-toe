@@ -6,6 +6,11 @@
   --color-txt: hsl(var(--tint-h), var(--tint-s), 10%);
   --color-txt-muted: hsl(from var(--color-txt) h s calc(l + 30));
   --color-border: hsl(from var(--color-txt) h s calc(l + 25) / 25%);
+  --ff: system-ui, sans-serif;
+  --fw: 500;
+  --font-header: var(--fw) 4.5rem var(--ff);
+  --font-announcement: var(--fw) 1.5rem var(--ff);
+  --font-body: var(--fw) 1.25rem var(--ff);
 }
 
 *,
@@ -28,18 +33,16 @@
   min-height: 100dvh;
   background-color: var(--color-bg);
   color: var(--color-txt-muted);
-  font-family: system-ui, sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font: var(--font-body);
 }
 
 h1 {
   color: var(--color-txt);
-  font-size: 4.5rem;
+  font: var(--font-header);
 }
 
 .announcement {
-  font-size: 1.5rem;
+  font: var(--font-announcement);
 }
 
 .board {
