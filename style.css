@@ -6,6 +6,7 @@
   --color-txt: hsl(var(--tint-h), var(--tint-s), 10%);
   --color-txt-muted: hsl(from var(--color-txt) h s calc(l + 30));
   --color-border: hsl(from var(--color-txt) h s calc(l + 25) / 25%);
+
   --ff: system-ui, sans-serif;
   --fw: 500;
   --font-header: var(--fw) 4.5rem var(--ff);
