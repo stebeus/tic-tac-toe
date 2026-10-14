@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-Beat your friends in this classic, offline game.
+Beat your friends in this classic, offline game: https://stebeus.github.io/tic-tac-toe/
 
 ## License
 
